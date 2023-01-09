@@ -1,0 +1,70 @@
+<div class="form">
+
+    <div class="addProduct">
+        <a>Ако сте фирма и предлагате калъфи за телефон може да добавите своите продукти тук.</a><br><br>
+        <form *ngIf="!isSend" name="addProduct" (ngSubmit)="onSubmit()" #f="ngForm" novalidate>
+            <label for="CompanyName" class="form-group">
+                <input name="CompanyName" class="form-control" [(ngModel)]="form.CompanyName" required minlength="3"
+                    maxlength="20" #CompanyName="ngModel">
+                <span>Име на фирма</span>
+            </label>
+            <label for="PhoneModel" class="form-group">
+                <input name="PhoneModel" class="form-control" [(ngModel)]="form.PhoneModel" required minlength="3"
+                    maxlength="20" #PhoneModel="ngModel">
+                <span>модел на телефон</span>
+            </label>
+            <label for="Height" class="form-group">
+                <input name="Height" class="form-control" [(ngModel)]="form.Height" required minlength="3"
+                    maxlength="20" #Height="ngModel">
+                <span>височина (мм)</span>
+            </label>
+            <label for="Width" class="form-group">
+                <input name="Width" class="form-control" [(ngModel)]="form.Width" required minlength="3" maxlength="20"
+                    #Width="ngModel">
+                <span>ширина (мм)</span>
+            </label>
+            <label for="Thickness" class="form-group">
+                <input name="Thickness" class="form-control" [(ngModel)]="form.Thickness" required minlength="3"
+                    maxlength="20" #Thickness="ngModel">
+                <span>дебелина (мм)</span>
+            </label>
+            <label for="Color" class="form-group">
+                изберете цвят
+                <select id="Color" name="Color" [(ngModel)]="form.Color" required minlength="3" maxlength="20"
+                    #Color="ngModel">
+                    <option value="Прозрачен"> Прозрачен </option>
+                    <option value="Бял"> Бял </option>
+                    <option value="Червен"> Червен </option>
+                    <option value="Сив"> Сив </option>
+                    <option value="Кафяв"> Кафяв </option>
+                    <option value="Жълт"> Жълт </option>
+                    <option value="Син"> Син </option>
+                    <option value="Черен"> Черен </option>
+                </select>
+            </label>
+            <label for="Availability" class="form-group">
+                <input name="Availability" class="form-control" [(ngModel)]="form.Availability" required minlength="3"
+                    maxlength="20" #Availability="ngModel">
+                <span>брой</span>
+            </label>
+            <label for="Price" class="form-group">
+                <input name="Price" class="form-control" [(ngModel)]="form.Price" required minlength="3" maxlength="20"
+                    #Price="ngModel">
+                <span>цена (лев)</span>
+            </label>
+            <label for="images" class="drop-container">
+                <span class="drop-title">Drop files here</span>
+                or
+                <input type="file" name="avatar" (change)="uploadImage($event)"/>
+              </label>
+
+            <button>Добави продукт</button>
+        </form>
+
+        <div class="alert alert-success" *ngIf="isSend">
+            <h4>Благодарим за използването на нашата платформа. Надяваме се да сме ви били полезни.</h4>
+        </div>
+
+    </div>
+
+</div>

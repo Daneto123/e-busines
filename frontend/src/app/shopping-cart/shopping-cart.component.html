@@ -1,0 +1,15 @@
+<body>
+
+    <div id="shoppingcart">
+        <p>Продукти: </p><br>
+        <ol>
+            <ng-container *ngFor="let item of list; let i = index">
+                <li *ngIf="i > 0"> {{item}} </li>
+            </ng-container>
+        </ol>
+        <li>Обща стойност: {{cartTotal}}</li>
+        <button (click)="Remove()" >Плати</button>
+        <label>{{ username }}</label>
+    </div>
+
+</body>

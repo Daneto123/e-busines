@@ -1,0 +1,40 @@
+<body>
+    <div class="main">
+
+        <h4>въдетете своите размери на телефон</h4>
+        <label for="height">височина (мм)</label><br>
+        <input type="text" name="height"[(ngModel)]="bySize.height" required minlength="3"
+        maxlength="20" #height="ngModel"><br>
+        <label for="width">ширина (мм)</label><br>
+        <input type="text" name="width" [(ngModel)]="bySize.width" required minlength="3"
+        maxlength="20" #width="ngModel"><br>
+        <label for="thickness">дебелина (мм)</label><br>
+        <input type="text" name="thickness" [(ngModel)]="bySize.thickness" required minlength="3"
+        maxlength="20" #thickness="ngModel"><br>
+
+        <button (click)="onSubmitBySize()">Търси</button>
+
+        <ul *ngFor="let item of findPhones">
+        <li>
+            <div class="product">
+                <div class="product-img">
+                    <img [src]= "(path + item.avatar)" alt="case image"/>
+                </div>
+                <div class="product-content">
+                    <h3>
+                        <button (click)="showProduct(item.name, item.width, item.height, item.thickness, 
+                        item.color, item.company, item.availability, item.price, item.avatar)">
+                        Модел на телефон: <b>{{item.name}}</b></button>
+                    </h3>
+                    <p class="product-text price">цена: {{item.price}} лв.</p>
+                    <p class="product-text genre">цвят: <small>{{item.color}}</small></p>
+                </div>
+            </div>
+        </li>
+        </ul>
+    </div>
+
+    <div class="phoneInfo" *ngIf="isFind">
+            <app-product [case]="Case"></app-product>
+    </div>
+</body>

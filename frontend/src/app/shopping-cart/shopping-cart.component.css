@@ -1,0 +1,26 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+#shoppingcart {
+    position: relative;
+    width: 200px;
+    height: fit-content;
+    background-color: bisque;
+}
+
+#shoppingcart ol li {
+    text-align: center;
+    display: list-item;
+    list-style-position: inside;
+}
+
+#shoppingcart p {
+    text-align: center;
+}
+
+#shoppingcart button {
+    background: none;
+    text-align: center;
+}

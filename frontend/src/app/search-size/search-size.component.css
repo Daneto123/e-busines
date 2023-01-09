@@ -1,0 +1,164 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.main {
+    background-color: rgb(173, 205, 214);
+    position: relative;
+    margin: 10px;
+    width: 350px;
+    height: fit-content;
+    overflow: auto;
+    box-sizing: border-box;
+    padding: 10px;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    box-shadow: 10px 10px rgb(185, 225, 238);
+    border: 1px solid rgb(138, 204, 224);
+    border-radius: 10px;
+}
+
+.phoneInfo {
+    margin: 10px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+h4 {
+    margin: 10px;
+}
+
+input {
+    height: 30px;
+    width: 200px;
+    margin: 5px;
+}
+
+.phoneInfo a {
+    font-size: medium;
+}
+
+.listPhones {
+    list-style: none;
+}
+
+ul {
+    display: table;
+    width: 100%;
+    text-align: center;
+}
+  
+li {
+display: table-cell;
+}
+
+.product {
+    display: inline-block;
+    width: 300px;
+    margin: 10px 10px 30px 10px;
+    vertical-align: top;
+}
+
+.product img {
+    display: block;
+    margin: 0 auto;
+    width: auto;
+    height: 200px;
+    max-width: calc(100% - 20px);
+    box-shadow: 0px 0px 7px 0px rgba(0, 0, 0, 0.8);
+    border-radius: 10px;
+}
+
+.product-content {
+    text-align: center;
+}
+
+.product h3 {
+    font-size: 20px;
+    font-weight: 600;
+    margin: 10px 0 0 0;
+}
+
+.product h3 small {
+    display: block;
+    font-size: 16px;
+    font-weight: 400;
+    font-style: italic;
+    margin: 7px 0 0 0;
+}
+
+.product .product-text {
+    margin: 7px 0 0 0;
+    color: #777;
+}
+
+.product .price {
+    font-family: sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.product .genre {
+    font-size: 14px;
+}
+
+
+button {
+  align-items: center;
+  background-color: #fee6e3;
+  border: 2px solid #111;
+  border-radius: 8px;
+  box-sizing: border-box;
+  color: #111;
+  cursor: pointer;
+  font-family: Inter,sans-serif;
+  font-size: 16px;
+  height: 48px;
+  justify-content: center;
+  line-height: 24px;
+  max-width: 100%;
+  padding: 0 25px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+button:after {
+  background-color: #111;
+  border-radius: 8px;
+  content: "";
+  display: block;
+  height: 48px;
+  left: 0;
+  width: 100%;
+  position: absolute;
+  top: -2px;
+  transform: translate(8px, 8px);
+  transition: transform .2s ease-out;
+  z-index: -1;
+}
+
+button:hover:after {
+  transform: translate(0, 0);
+}
+
+button:active {
+  background-color: #ffdeda;
+  outline: 0;
+}
+
+button:hover {
+  outline: 0;
+}
+
+@media (min-width: 768px) {
+  button {
+    padding: 0 40px;
+  }
+}

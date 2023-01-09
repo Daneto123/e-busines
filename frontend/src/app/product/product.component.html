@@ -1,0 +1,18 @@
+<div id="product">
+    <img [src]= "(path + case.avatar)" alt="case image"/>
+    <label>Име на телефон: {{case.name}} </label><br>
+    <label>Дължина: {{case.width}} мм</label><br>
+    <label>Височина: {{case.height}} мм</label><br>
+    <label>Ширина: {{case.thickness}} мм</label><br>
+    <label>Цвят: {{case.color}}</label><br>
+    <label>Фирма: {{case.company}}</label><br>
+    <label>Количество: {{case.availability}} броя</label><br>
+    <label>Цена: {{case.price}} лв.</label><br>
+
+    <div class="buttons">
+        <button (click)="BuyItem(case.name, case.price)" >Купи</button>
+
+        <button>затвори</button>
+    </div>
+
+</div>

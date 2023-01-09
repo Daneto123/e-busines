@@ -1,0 +1,43 @@
+
+<nav class="slidemenu" *ngIf="!isOnLogin">
+  
+    <!-- Item 1 -->
+    <input type="radio" name="slideItem" id="slide-item-1" class="slide-toggle" checked/>
+    <label for="slide-item-1"><p class="icon">🔎</p><span (click)="isOnSearch=true;isOnAddProduct=false;isOnContact=false;isOnShopping=false;isSlider=true">Търсене на продукт</span></label>
+    
+    <!-- Item 2 -->
+    <input type="radio" name="slideItem" id="slide-item-2" class="slide-toggle" *ngIf="isAdd" />
+    <label for="slide-item-2" *ngIf="isAdd"><p class="icon">➕</p><span (click)="isOnAddProduct=true;isOnContact=false;isOnShopping=false;isOnSearch=false;isSlider=false">Добавяне на продукт</span></label>
+
+    <!-- Item 3 -->
+    <input type="radio" name="slideItem" id="slide-item-3" class="slide-toggle"/>
+    <label for="slide-item-3"><p class="icon">🏠</p><span>За нас</span></label>
+    
+    <!-- Item 4 -->
+    <input type="radio" name="slideItem" id="slide-item-4" class="slide-toggle" />
+    <label for="slide-item-4"><p class="icon">📱</p><span (click)="isOnContact=true;isOnAddProduct=false;isOnShopping=false;isOnSearch=false;isSlider=false">Контакти</span></label>
+
+
+    <input type="radio" name="slideItem" id="slide-item-5" class="slide-toggle" />
+    <label for="slide-item-5"><p class="icon">😀</p><span (click)="showCart()">{{ this.username }}</span></label>
+
+    <div class="clear"></div>
+    
+    <!-- Bar -->
+    <div class="slider">
+      <div class="bar"></div>
+    </div>
+
+    <!-- *ngIf="isOnShopping" -->
+    <app-slider *ngIf="isSlider"></app-slider>
+    <app-search *ngIf="isOnSearch"></app-search>
+    <div id="shoppingcart">
+      <app-shopping-cart [username]="username"></app-shopping-cart>
+    </div>
+    <app-add-product *ngIf="isOnAddProduct"></app-add-product>
+    <app-contact *ngIf="isOnContact"></app-contact>
+    <app-footer></app-footer>
+    
+</nav>
+
+<app-login (newItemEvent)="addItem($event)" *ngIf="isOnLogin"></app-login>

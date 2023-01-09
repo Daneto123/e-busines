@@ -1,0 +1,59 @@
+<div class="contact">
+    <div class="inner">
+        <form *ngIf="!isSubmitted" name="contact" (ngSubmit)="onSubmit()" #f="ngForm" novalidate>
+            <!-- <h3>Ако не можете на намерите калъф за вашия телефон, може да изпратите заявка, която ние ще обработим и ще върнем отговор</h3> -->
+            <h4>Ако знаете модела на телефона го въведете тук и пропоснете следващите 3 полета</h4>
+            <label for="phoneModule" class="form-group">
+                <input name="phoneModule" class="form-control" [(ngModel)]="form.phoneModule" required minlength="3"
+                    maxlength="20" #phoneModule="ngModel">
+                <span>марка и модел на телефон</span>
+            </label>
+            <h4>въдетете своите размери на телефон</h4>
+            <label for="height" class="form-group">
+                <input name="height" type="text" class="form-control" [(ngModel)]="form.height" required minlength="3"
+                    maxlength="20" #height="ngModel">
+                <span>височина (мм)</span>
+            </label>
+            <label for="width" class="form-group">
+                <input name="width" class="form-control" [(ngModel)]="form.width" required minlength="3" maxlength="20"
+                    #width="ngModel">
+                <span>ширина (мм)</span>
+            </label>
+            <label for="thickness" class="form-group">
+                <input name="thickness" class="form-control" [(ngModel)]="form.thickness" required minlength="3"
+                    maxlength="20" #thickness="ngModel">
+                <span>дебелина (мм)</span>
+            </label>
+            <label for="color" class="form-group">изберете цвят
+                <select name="color" [(ngModel)]="form.color" required #color="ngModel">
+                    <option value="Прозрачен"> Прозрачен </option>
+                    <option value="Бял"> Бял </option>
+                    <option value="Червен"> Червен </option>
+                    <option value="Сив"> Сив </option>
+                    <option value="Кафяв"> Кафяв </option>
+                    <option value="Жълт"> Жълт </option>
+                    <option value="Син"> Син </option>
+                    <option value="Черен"> Черен </option>
+                </select></label>
+
+            <label for="email" class="form-group">
+                <input name="email" class="form-control" [(ngModel)]="form.email" required minlength="6" maxlength="40"
+                    #email="ngModel">
+                <span>email</span>
+            </label>
+
+            <label for="moreInfo" class="form-group">
+                <textarea name="moreInfo" id="moreInfo" class="form-control" [(ngModel)]="form.moreInfo" required
+                    #moreInfo="ngModel"></textarea>
+                <span>Добавете информация която смятате за полезна:</span>
+            </label>
+
+            <button>Изпрати</button>
+
+        </form>
+
+        <div class="alert alert-success" *ngIf="isSubmitted">
+            <h4>Благодарим за използването на нашата платформа. Надяваме се да сме ви били полезни.</h4>
+        </div>
+    </div>
+</div>
