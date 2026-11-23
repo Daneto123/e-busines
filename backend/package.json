@@ -1,21 +1,27 @@
 {
-  "name": "caseforphones",
-  "version": "1.0.0",
-  "description": "",
-  "type": "commonjs",
+  "name": "caseforphones-backend",
+  "version": "2.0.0",
+  "description": "Онлайн магазин за калъфи за телефони: API (Express 5 + SQLite)",
+  "private": true,
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "node --watch src/server.js",
+    "test": "node --test"
+  },
+  "engines": {
+    "node": "^22.22.3 || >=24.15.0"
+  },
+  "author": "Йордан Павлов",
+  "license": "ISC",
   "dependencies": {
-    "body-parser": "^1.20.1",
-    "cors": "^2.8.5",
-    "dotenv": "^16.0.3",
-    "ejs": "^3.1.8",
-    "express": "^4.18.2",
-    "express-session": "^1.17.3",
-    "multer": "^1.4.5-lts.1",
-    "mysql": "^2.18.1",
-    "mysql2": "^2.3.3",
-    "nodemailer": "^6.8.0",
-    "path": "^0.12.7",
-    "session-file-store": "^1.5.0",
-    "uuid": "^9.0.0"
+    "dotenv": "^18.0.10",
+    "express": "^5.3.0",
+    "helmet": "^8.3.0",
+    "multer": "^2.5.0",
+    "nodemailer": "^10.6.1"
+  },
+  "devDependencies": {
+    "supertest": "^7.3.2"
   }
 }
